@@ -25,6 +25,7 @@ namespace polysolve::nonlinear
         firstGradNorm = 0;
         fDeltaCount = 0;
         xDeltaDotGrad = 0;
+	firstStepGradNorm = 0;
     }
 
     void Criteria::print(std::ostream &os) const
@@ -41,10 +42,14 @@ namespace polysolve::nonlinear
             return Status::IterationLimit;
         }
         const double stopGradNorm = current.iterations == 0 ? stop.firstGradNorm : stop.gradNorm;
-        if (stopGradNorm > 0 && current.gradNorm < stopGradNorm)
-        {
-            return Status::GradNormTolerance;
-        }
+        //if (stopGradNorm > 0 && current.gradNorm < stopGradNorm)
+        //{
+        //    return Status::GradNormTolerance;
+        //}
+	if (stopGradNorm > 0 && stop.firstStepGradNorm != 0 && current.gradNorm < stopGradNorm * stop.firstStepGradNorm)
+	{
+	    return Status::GradNormTolerance;
+	}
         if (stop.xDelta > 0 && current.xDelta < stop.xDelta)
         {
             return Status::XDeltaTolerance;

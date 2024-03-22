@@ -316,6 +316,11 @@ namespace polysolve::nonlinear
                 verify_gradient(objFunc, x, grad);
             }
 
+	    if (current_strategy_iter == 0)
+	    {
+	    	m_stop.firstStepGradNorm = compute_grad_norm(x, grad);
+		m_logger.debug("[{}] firstStepGradNorm computed as {}", descent_strategy_name(), m_stop.firstStepGradNorm);
+	    }
             m_current.gradNorm = compute_grad_norm(x, grad);
             if (std::isnan(m_current.gradNorm))
             {

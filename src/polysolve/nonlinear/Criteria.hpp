@@ -37,6 +37,7 @@ namespace polysolve::nonlinear
         double firstGradNorm; ///< Initial norm of gradient vector
         double xDeltaDotGrad; ///< Dot product of parameter vector and gradient vector
         unsigned fDeltaCount; ///< Number of steps where fDelta is satisfied
+	double firstStepGradNorm;
 
         Criteria();
 
