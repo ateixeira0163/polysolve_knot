@@ -38,6 +38,7 @@ namespace polysolve::nonlinear
         double xDeltaDotGrad; ///< Dot product of parameter vector and gradient vector
         unsigned fDeltaCount; ///< Number of steps where fDelta is satisfied
 	double firstStepGradNorm;
+	bool useRelativeGradNorm;
 
         Criteria();
 

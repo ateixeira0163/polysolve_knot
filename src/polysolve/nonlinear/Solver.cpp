@@ -201,6 +201,7 @@ namespace polysolve::nonlinear
         m_stop.xDelta = solver_params["x_delta"];
         m_stop.fDelta = solver_params["advanced"]["f_delta"];
         m_stop.gradNorm = solver_params["grad_norm"];
+	m_stop.useRelativeGradNorm = solver_params["use_relative_grad_norm"];
         m_stop.firstGradNorm = solver_params["first_grad_norm_tol"];
         m_stop.xDeltaDotGrad = -solver_params["advanced"]["derivative_along_delta_x_tol"].get<double>();
 
