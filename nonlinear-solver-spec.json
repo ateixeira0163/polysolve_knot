@@ -8,6 +8,7 @@
             "grad_norm",
             "first_grad_norm_tol",
             "max_iterations",
+	    "use_relative_grad_norm",
             "iterations_per_strategy",
             "line_search",
             "allow_out_of_iterations",
@@ -65,6 +66,12 @@
         "default": 500,
         "type": "int",
         "doc": "Maximum number of iterations for a nonlinear solve."
+    },
+    {
+    	"pointer": "/use_relative_grad_norm",
+	"default": false,
+	"type": "bool",
+	"doc": "If active, it will use relative grad"
     },
     {
         "pointer": "/iterations_per_strategy",
