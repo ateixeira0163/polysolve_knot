@@ -45,7 +45,7 @@ namespace polysolve::nonlinear
         double stopGradNorm = current.iterations == 0 ? stop.firstGradNorm : stop.gradNorm;
 	if (stop.useRelativeGradNorm)
 	{
-		std::cout << "Using relative gradient norm";
+		//	std::cout << "Using relative gradient norm";
 		stopGradNorm *= stop.firstStepGradNorm;
 	}
         //if (stopGradNorm > 0 && current.gradNorm < stopGradNorm)
